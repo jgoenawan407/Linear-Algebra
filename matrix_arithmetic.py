@@ -7,7 +7,8 @@ def scale(scalar, matrix):
   scaled = copy.deepcopy(matrix)
 
   for r in range(len(matrix)): 
-    #r starts at 0 and goes until end of matrix (exclusive of last index)
+    
+    # r starts at 0 and goes until end of matrix (exclusive of last index)
     for c in range(len(matrix[0])):
       scaled[r][c] = scalar * matrix[r][c]
   return(scaled)
@@ -27,7 +28,7 @@ def add(m1, m2):
         M3[i][j] = m1[i][j] + m2[i][j]
     return(M3)    
 
-def mult(m1, m2):
+def mult(m1, m2): # multiply two matrices
 
   if len(m1[0]) != len(m2):
     return("Matrix dimensions do not agree")
@@ -50,7 +51,6 @@ def mult(m1, m2):
 m1 = [[1, 2, 3], [4, 5, 6]]
 m2 = [[4, 6, 7], [9, 11, 2]]
 m3 = [[4, 7], [10, 3], [8, 2]] # can multiply m1m3 or m2m3
-# m4 = input("enter matrix for determinant calculation"), tough to do matrix input, since we'd have to split by element and then cast each element to int
 
 print('Matrix 1: ' + str(m1))
 print('Matrix 2: ' + str(m2))
