@@ -37,9 +37,7 @@ def cramer_solve(coeff, constants):
 		for j in range(len(coeff[0])):
 
 			m_i[j][i] = constants[j][0]
-
 		solns[i] = det(m_i) / d
-
 	return(solns)
 
 m1 = [[1, 2, 3], [4, 5, 6]] # returns error
