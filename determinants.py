@@ -36,7 +36,7 @@ def cramer_solve(coeff, constants):
 
 		for j in range(len(coeff[0])):
 
-			m_i[j][i] = constants[j][0]
+			m_i[j][i] = constants[j][0] # put corresponding element from constants vector into matrix
 		solns[i] = det(m_i) / d
 	return(solns)
 
@@ -56,6 +56,9 @@ print('Determinant of Matrix 1: ' + str(det(m3)))
 print('Determinant of Matrix 1: ' + str(det(diag)))
 
 # solving system with cramer's rule
-coeff = [[3, -5], [6, 16]] # matrix holding variable coefficients
-constants = [[15.5], [5.0]] # constants (on right side of =)
-print('Cramer Solution: ' + str(cramer_solve(coeff, constants)))
+coeff1 = [[3, -5], [6, 16]] # matrix holding variable coefficients
+constants1 = [[15.5], [5.0]] # constants (on right side of =)
+print('Cramer Solution 1: ' + str(cramer_solve(coeff1, constants1)))
+coeff2 = [[1, 2, -1, 1], [-1, 1, 2, -1], [2, -1, 2, 2], [1, 1, -1, 2]]
+constants2 = [[6], [3], [14], [8]]
+print('Cramer Solution 2: ' + str(cramer_solve(coeff2, constants2)))
