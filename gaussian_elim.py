@@ -74,7 +74,14 @@ def gauss_elim(M):
 m1 = [[4, -6, -11], [-3, 8, 10]]
 m2 = [[0, 8, 6, -6], [1, 1, -1, 9], [-2, 4, -6, 40]]
 m3 = [[3, -0.5, 0.6], [1.5, 4.5, 6.0]]
+m4 = [[7, 2, -1, 1, 0, 0], [0, 3, -1, 0, 1, 0], [-3, 4, 2, 0, 0, 1]]
 
-print(gauss_elim(m1))
-print(gauss_elim(m2))
-print(gauss_elim(m3))
+def main():
+
+    print(gauss_elim(m1))
+    print(gauss_elim(m2))
+    print(gauss_elim(m3))
+    print(gauss_elim(m4))
+
+if __name__ == "__main__":
+    main()
