@@ -2,19 +2,19 @@
 
 import copy
 
-def rowSwap(M,r1,r2):
+def rowSwap(M, r1, r2):
     matrix = copy.deepcopy(M)
     matrix[r1] = M[r2]
     matrix[r2] = M[r1]
     return(matrix)
 
-def rowScale(M,r1,s):
+def rowScale(M, r1, s):
     matrix = copy.deepcopy(M)
     for i in range(len(M[r1])):
         matrix[r1][i] = M[r1][i] * s
     return(matrix)
 
-def rowSum(M,r1,r2,s):
+def rowSum(M, r1, r2, s):
     matrix = copy.deepcopy(M)
     for i in range(len(M[r1])):
         matrix[r2][i] = (M[r1][i] * s) + M[r2][i]
