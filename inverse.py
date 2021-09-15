@@ -21,7 +21,7 @@ aug_mat = [([0] * (len(m[0]) * 2)) for i in range(len(m))]
 
 for i in range(len(aug_mat)):
 	for j in range(len(aug_mat[0])):
-		if j < 3:
+		if j < len(m):
 			aug_mat[i][j] = m[i][j]
 		else :
 			aug_mat[i][j] = identity[i][j - len(m)]
