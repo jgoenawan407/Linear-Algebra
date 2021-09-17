@@ -37,28 +37,36 @@ def cramer_solve(coeff, constants):
 		for j in range(len(coeff[0])):
 
 			m_i[j][i] = constants[j][0] # put corresponding element from constants vector into matrix
+
 		solns[i] = det(m_i) / d
+
 	return(solns)
 
-m1 = [[1, 2, 3], [4, 5, 6]] # returns error
-m2 = [[0, 4, -1, 5], [-4, 0, 3, 2], [1, -3, 0, 1], [-5, 2, -1, 0]]
-m3 = [[4, 7, 0, 0], [2, 8, 0, 0], [0, 0, 1, 5],[0, 0, -2, 2]]
-diag = [[4, -1, 8], [0, 2, 3], [0, 0, 5]]
+def main():
 
-print('Matrix 1: ' + str(m1))
-print('Matrix 2: ' + str(m2))
-print('Matrix 3: ' + str(m3))
-print('Diagonal Matrix: ' + str(diag))
+	m1 = [[1, 2, 3], [4, 5, 6]] # returns error
+	m2 = [[0, 4, -1, 5], [-4, 0, 3, 2], [1, -3, 0, 1], [-5, 2, -1, 0]]
+	m3 = [[4, 7, 0, 0], [2, 8, 0, 0], [0, 0, 1, 5],[0, 0, -2, 2]]
+	diag = [[4, -1, 8], [0, 2, 3], [0, 0, 5]]
+	m4 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-print('Determinant of Matrix 1: ' + str(det(m1)))
-print('Determinant of Matrix 1: ' + str(det(m2)))
-print('Determinant of Matrix 1: ' + str(det(m3)))
-print('Determinant of Matrix 1: ' + str(det(diag)))
+	print('Matrix 1: ' + str(m1))
+	print('Matrix 2: ' + str(m2))
+	print('Matrix 3: ' + str(m3))
+	print('Diagonal Matrix: ' + str(diag) + '\n')
 
-# solving system with cramer's rule
-coeff1 = [[3, -5], [6, 16]] # matrix holding variable coefficients
-constants1 = [[15.5], [5.0]] # constants (on right side of =)
-print('Cramer Solution 1: ' + str(cramer_solve(coeff1, constants1)))
-coeff2 = [[1, 2, -1, 1], [-1, 1, 2, -1], [2, -1, 2, 2], [1, 1, -1, 2]]
-constants2 = [[6], [3], [14], [8]]
-print('Cramer Solution 2: ' + str(cramer_solve(coeff2, constants2)))
+	print('Determinant of Matrix 1: ' + str(det(m1)))
+	print('Determinant of Matrix 2: ' + str(det(m2)))
+	print('Determinant of Matrix 3: ' + str(det(m3)))
+	print('Determinant of Matrix 4: ' + str(det(diag)) + '\n')
+
+	# solving system with cramer's rule
+	coeff1 = [[3, -5], [6, 16]] # matrix holding variable coefficients
+	constants1 = [[15.5], [5.0]] # constants (on right side of =)
+	print('Cramer Solution 1: ' + str(cramer_solve(coeff1, constants1)))
+	coeff2 = [[1, 2, -1, 1], [-1, 1, 2, -1], [2, -1, 2, 2], [1, 1, -1, 2]]
+	constants2 = [[6], [3], [14], [8]]
+	print('Cramer Solution 2: ' + str(cramer_solve(coeff2, constants2)))
+
+if __name__ == '__main__':
+	main()
