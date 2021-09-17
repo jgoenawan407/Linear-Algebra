@@ -7,8 +7,7 @@ def scale(scalar, matrix):
   scaled = copy.deepcopy(matrix)
 
   for r in range(len(matrix)): 
-    
-    # r starts at 0 and goes until end of matrix (exclusive of last index)
+    #r starts at 0 and goes until end of matrix (exclusive of last index)
     for c in range(len(matrix[0])):
       scaled[r][c] = scalar * matrix[r][c]
   return(scaled)
@@ -28,7 +27,7 @@ def add(m1, m2):
         M3[i][j] = m1[i][j] + m2[i][j]
     return(M3)    
 
-def mult(m1, m2): # multiply two matrices
+def mult(m1, m2):
 
   if len(m1[0]) != len(m2):
     return("Matrix dimensions do not agree")
@@ -48,18 +47,24 @@ def mult(m1, m2): # multiply two matrices
 
     return(m)
 
-m1 = [[1, 2, 3], [4, 5, 6]]
-m2 = [[4, 6, 7], [9, 11, 2]]
-m3 = [[4, 7], [10, 3], [8, 2]] # can multiply m1m3 or m2m3
+def main():
 
-print('Matrix 1: ' + str(m1))
-print('Matrix 2: ' + str(m2))
-print('Matrix 3: ' + str(m3))
+  m1 = [[1, 2, 3], [4, 5, 6]]
+  m2 = [[4, 6, 7], [9, 11, 2]]
+  m3 = [[4, 7], [10, 3], [8, 2]] # can multiply m1m3 or m2m3
+  # m4 = input("enter matrix for determinant calculation"), tough to do matrix input, since we'd have to split by element and then cast each element to int
 
-print('Scaled matrix 1 by 6: ' + str(scale(6, m1)))
+  print('Matrix 1: ' + str(m1))
+  print('Matrix 2: ' + str(m2))
+  print('Matrix 3: ' + str(m3))
 
-print('Adding matrices 1 and 2: ' + str(add(m1, m2)))
-print('Adding matrices 1 and 3: ' + str(add(m1, m3))) # should return error
+  print('Scaled matrix 1 by 6: ' + str(scale(6, m1)))
 
-print('Multiplying matrices 2 and 3: ' + str(mult(m2, m3)))
-print('Multiplying matrices 1 and 2: ' + str(mult(m1, m2))) # should return error
+  print('Adding matrices 1 and 2: ' + str(add(m1, m2)))
+  print('Adding matrices 1 and 3: ' + str(add(m1, m3))) # should return error
+
+  print('Multiplying matrices 2 and 3: ' + str(mult(m2, m3)))
+  print('Multiplying matrices 1 and 2: ' + str(mult(m1, m2))) # should return error
+
+if __name__ == '__main__':
+  main()
