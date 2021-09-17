@@ -15,6 +15,11 @@ def transform(trans_mat, init_pts):
   plt.plot(transformed[0], transformed[1], 'o') 
   plt.show()
 
-m = [[2, 0], [0, 2]] # transformation matrix
-v = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]] # x-coords in first array, y-coords in 2nd
-transform(m, v)
+def main():
+
+	m = [[2, 0], [0, 2]] # transformation matrix
+	v = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]] # x-coords in first array, y-coords in 2nd
+	transform(m, v)
+
+if __name__ == '__main__':
+	main()
