@@ -2,19 +2,19 @@
 
 import copy
 
-def rowSwap(M, r1, r2):
+def rowSwap(M,r1,r2):
     matrix = copy.deepcopy(M)
     matrix[r1] = M[r2]
     matrix[r2] = M[r1]
     return(matrix)
 
-def rowScale(M, r1, s):
+def rowScale(M,r1,s):
     matrix = copy.deepcopy(M)
     for i in range(len(M[r1])):
         matrix[r1][i] = M[r1][i] * s
     return(matrix)
 
-def rowSum(M, r1, r2, s):
+def rowSum(M,r1,r2,s):
     matrix = copy.deepcopy(M)
     for i in range(len(M[r1])):
         matrix[r2][i] = (M[r1][i] * s) + M[r2][i]
@@ -71,17 +71,21 @@ def gauss_elim(M):
 
     return matrix
 
-m1 = [[4, -6, -11], [-3, 8, 10]]
-m2 = [[0, 8, 6, -6], [1, 1, -1, 9], [-2, 4, -6, 40]]
-m3 = [[3, -0.5, 0.6], [1.5, 4.5, 6.0]]
-m4 = [[7, 2, -1, 1, 0, 0], [0, 3, -1, 0, 1, 0], [-3, 4, 2, 0, 0, 1]]
-
 def main():
 
-    print(gauss_elim(m1))
-    print(gauss_elim(m2))
-    print(gauss_elim(m3))
-    print(gauss_elim(m4))
+    m1 = [[4, -6, -11], [-3, 8, 10]]
+    m2 = [[0, 8, 6, -6], [1, 1, -1, 9], [-2, 4, -6, 40]]
+    m3 = [[3, -0.5, 0.6], [1.5, 4.5, 6.0]]
+    m4 = [[7, 2, -1, 1, 0, 0], [0, 3, -1, 0, 1, 0], [-3, 4, 2, 0, 0, 1]]
+
+    print('Matrix 1: ' + str(m1))
+    print('Reduced 1: ' + str(gauss_elim(m1)) + '\n')
+    print('Matrix 2: ' + str(m2))
+    print('Reduced 2: ' + str(gauss_elim(m2)) + '\n')    
+    print('Matrix 3: ' + str(m3))
+    print('Reduced 3: ' + str(gauss_elim(m3)) + '\n')
+    print('Matrix 4: ' + str(m4))
+    print('Reduced 4: ' + str(gauss_elim(m4)) + '\n')
 
 if __name__ == "__main__":
     main()
